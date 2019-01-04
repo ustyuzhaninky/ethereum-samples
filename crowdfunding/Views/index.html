@@ -1,0 +1,111 @@
+<html>
+<head>
+  <title>Crowdfunding</title>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div>
+    <nav class="navbar navbar-inverse navbar-static-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">Crowdfunding</a>
+        <ul class="nav navbar-nav">
+          <li class="active">
+            <a href="/">Campaign</a>
+          </li>
+          <li>
+            <a href="/">Кнопка 2</a>
+          </li>
+          <li>
+            <a href="/">Кнопка 3</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="row">
+      <div class="jumbotron"  style="padding:40px;">
+        <h1>Let's make a rock-n-roll festival in our city!</h1>
+        <p>We need to collect some donations to make it possible. You may donate a 0.01ETH (~$4.66) and obtain a ticket to help us.</p>
+        <div class="container">
+          <div class="row">
+            <label><h3>Time left:</h3></label>
+            <label><h3 id="elapsed"></h3></label>
+          </div>
+          <div class="row">
+            <label><h3>Collected:</h3></label>
+            <label><h3 id="collected"></h3></label>
+          </div>
+          <div class="row">
+            <label><h3>Objective:</h3></label>
+            <label><h3 id="target"></h3></label>
+          </div>
+        </div>
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalDonate">
+              Donate!
+          </button>
+      </div>
+  
+      <!-- Modal -->
+      <div class="modal fade" id="modalDonate" tabindex="-1" role="dialog" aria-labelledby="modalDonateTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+              <h5 class="modal-title" id="modalDonateTitle">Buying a ticket</h5>
+            </div>
+            <div class="modal-body">
+                <div class="input-group mb-3">
+                    <div class="input-group-addon">
+                      <span class="input-group-text">Address</span>
+                    </div>
+                    <input id="clientAddress" type="text" class="form-control" placeholder="Ethereum address" aria-label="Ethereum address" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-addon">
+                      <span class="input-group-text">Balance </span>
+                    </div>
+                    <input id="balanceNumber" min="0" step="1" data-bind="value:balanceNumber" type="number" class="form-control" placeholder="0" aria-label="Ethereum balance" aria-describedby="basic-addon1" disabled>
+                    <div class="input-group-addon">
+                        <span class="input-group-text">ETH</span>
+                    </div>
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-addon">
+                      <span class="input-group-text">Amount   </span>
+                    </div>
+                    <input id="amountNumber" min="0" step="1" data-bind="value:amountNumber" type="number" class="form-control" placeholder="0" aria-label="Ethereum balance" aria-describedby="basic-addon1">
+                    <div class="input-group-addon">
+                        <span class="input-group-text">TKT</span>
+                    </div>
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-addon">
+                      <span class="input-group-text">Total</span>
+                    </div>
+                    <input id="totalNumber" min="0" step="1" data-bind="value:totalNumber" type="number" class="form-control" placeholder="Amount, ETH" aria-label="0" aria-describedby="basic-addon1" disabled>
+                    <div class="input-group-addon">
+                        <span class="input-group-text">ETH</span>
+                    </div>
+                </div>                     
+              <p>By doing so, you obtaining a corresponding amount of tickets to the festival.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button disabled="true" id="buyButton" type="button" class="btn btn-primary" onclick="buyTocken()">Buy</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script type="text/javascript" src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
+<script type="text/javascript" src="../Scripts/index.js"></script>
+</html>

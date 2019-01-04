@@ -1,0 +1,27 @@
+{
+  "name": "crowdfunding_dapp",
+  "version": "1.0.0",
+  "description": "this is crowdfunding dapp for students",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rognak/std-crowdfund.git"
+  },
+  "author": "Konstantin U, Danil Kh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rognak/std-crowdfund/issues"
+  },
+  "homepage": "https://github.com/Rognak/std-crowdfund#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "fc": "^1.5.2",
+    "ganache-cli": "^6.1.8",
+    "solc": "^0.4.24",
+    "web3": "^0.20.1"
+  }
+}
