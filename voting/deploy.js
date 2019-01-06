@@ -31,7 +31,7 @@ var contractInstance = VotingContract.at(deployedContract.address)
 
 
 // Transaction has entered to ganache-cli memory pool
-console.log("Your contract is being deployed in transaction at http://127.0.0.1:8545/" + VotingContract.transactionHash);
+console.log("Your contract address is " + VotingContract.transactionHash);
 
 // http://stackoverflow.com/questions/951021/what-is-the-javascript-version-of-sleep
 function sleep(ms) {
