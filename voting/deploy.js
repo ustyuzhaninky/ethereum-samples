@@ -1,6 +1,6 @@
 var Web3 = require('web3')
 var fs = require ('fs')
-const ganache = require('ganache-cli');
+//const ganache = require('ganache-cli');
 
 console.log('Deploy start...')
 var web3 = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:8545'));
@@ -29,9 +29,8 @@ console.log('Contract address is:')
 console.log(deployedContract.address)
 var contractInstance = VotingContract.at(deployedContract.address)
 
-
 // Transaction has entered to ganache-cli memory pool
-console.log("Your contract address is " + VotingContract.transactionHash);
+console.log("Your contract address is " + VotingContract.address);
 
 // http://stackoverflow.com/questions/951021/what-is-the-javascript-version-of-sleep
 function sleep(ms) {
@@ -44,7 +43,7 @@ async function waitBlock(contract) {
   while (true) {
     let receipt = web3.eth.getTransactionReceipt(contract.transactionHash);
     if (receipt && receipt.contractAddress) {
-      console.log("Your contract has been deployed at http://127.0.0.1:8545/" + receipt.contractAddress);
+      console.log("Your contract has been deployed at " + receipt.contractAddress);
       console.log("Note that it might take 30 - 90 sceonds for the block to propagate befor it's visible");
       break;
     }
