@@ -1,7 +1,7 @@
 {
-  "name": "crowdfunding",
+  "name": "voting",
   "version": "1.0.0",
-  "description": "A simple crowdfunding dapp with ethereum",
+  "description": "A simple voting dapp with ethereum",
   "main": "server.js",
   "dependencies": {
     "cors": "^2.8.5",
